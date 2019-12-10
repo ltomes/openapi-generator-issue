@@ -10,4 +10,4 @@ A sample repository to demonstrate issues with openapi generator when generating
 Generated code properly imports interfaces that are required
 
 ### Working example without additional properties:
-Run `npm run build` to see the `specWithoutAdditionalProperties.yaml` spec build as expected
+Run `npm run build` to see the `specWithoutAdditionalProperties.yaml` spec build as expected, with all interfaces imported in services.
