@@ -1,0 +1,53 @@
+openapi: 3.0.1
+info:
+  title: Compile Error Sample
+  version: 0.0.1
+servers:
+  - url: http://localhost:9090/api
+    description: Generated server url
+paths:
+  /endpoint/{version}/{tenantCode}:
+    get:
+      operationId: getSampleDataWithAdditionalProperties
+      parameters:
+        - name: version
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tenantCode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: default response
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleSchema'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleSchema'
+components:
+  schemas:
+    SampleSchema:
+      type: object
+      properties:
+        parentAttributeId:
+          type: integer
+          format: int32
+        attributeId:
+          type: integer
+          format: int32
+        attributeName:
+          type: string
+  securitySchemes:
+    basicScheme:
+      type: http
+      scheme: basic
